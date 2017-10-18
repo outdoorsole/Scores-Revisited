@@ -67,6 +67,9 @@
                                 <rect key="frame" x="153" y="281" width="69" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="who won?"/>
+                                <connections>
+                                    <action selector="whoWon:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ki8-GP-d0P"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kuA-h4-7ef">
                                 <rect key="frame" x="148" y="323" width="78" height="21"/>
@@ -78,6 +81,13 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
+                    <connections>
+                        <outlet property="giantsScoreLabel" destination="bGi-nd-Ggc" id="4Yd-82-VEE"/>
+                        <outlet property="giantsScoreTextField" destination="94W-1p-RST" id="Vog-SU-iAR"/>
+                        <outlet property="visitorScoreLabel" destination="7nO-0g-0xW" id="JKN-Kk-fbC"/>
+                        <outlet property="visitorScoreTextField" destination="zOX-NW-xrx" id="CnB-b8-XS6"/>
+                        <outlet property="winningTeamLabel" destination="kuA-h4-7ef" id="8Bt-n5-w6x"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
