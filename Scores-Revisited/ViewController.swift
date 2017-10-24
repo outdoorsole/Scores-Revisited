@@ -58,13 +58,21 @@ class ViewController: UIViewController, UITextFieldDelegate {
         print("textFieldDidEndEditing")
         if textField == giantsScoreTextField {
             if giantsScoreTextField.text != nil {
-                giantsScoreLabel.text = giantsScoreTextField.text
+                if let giantsScore = Int(giantsScoreTextField.text!) {
+                    if giantsScore > 0 {
+                        giantsScoreLabel.text = giantsScoreTextField.text
+                    }
+                }
             }
         }
         
         if textField == visitorScoreTextField {
             if visitorScoreTextField.text != nil {
-                visitorScoreLabel.text = visitorScoreTextField.text
+                if let visitorScore = Int(visitorScoreTextField.text!) {
+                    if visitorScore > 0 {
+                        visitorScoreLabel.text = visitorScoreTextField.text
+                    }
+                }
             }
         }
     }
