@@ -53,6 +53,21 @@ class ViewController: UIViewController, UITextFieldDelegate {
         visitorScoreTextField.resignFirstResponder()
         return true
     }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        print("textFieldDidEndEditing")
+        if textField == giantsScoreTextField {
+            if giantsScoreTextField.text != nil {
+                giantsScoreLabel.text = giantsScoreTextField.text
+            }
+        }
+        
+        if textField == visitorScoreTextField {
+            if visitorScoreTextField.text != nil {
+                visitorScoreLabel.text = visitorScoreTextField.text
+            }
+        }
+    }
 
 }
 
