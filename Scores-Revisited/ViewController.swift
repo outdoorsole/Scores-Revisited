@@ -37,10 +37,13 @@ class ViewController: UIViewController, UITextFieldDelegate {
         let giantsScore: Int = Int(giantsScoreLabel.text!)!
         let visitorScore: Int = Int(visitorScoreLabel.text!)!
         
+        // Case 1: If Giants score is less, Visitor wins
         if giantsScore < visitorScore {
             winningTeamLabel.text = "Visitor"
+        // Case 2: If Giants score is greater, Giants win
         } else if giantsScore > visitorScore {
             winningTeamLabel.text = "Giants"
+        // Case 3: If the scores are the same, then tie
         } else {
             winningTeamLabel.text = "Tie"
         }
@@ -48,24 +51,28 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     // MARK: Methods
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        print("textFieldShouldReturn")
         giantsScoreTextField.resignFirstResponder()
         visitorScoreTextField.resignFirstResponder()
         return true
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
-        print("textFieldDidEndEditing")
+
+        // 1) Check which textField has been edited:
         if textField == giantsScoreTextField {
+            // 2) Check to make sure the text field has a value
             if giantsScoreTextField.text != nil {
+                // 3) Use optional binding to check if the value can be cast as an Int
                 if let giantsScore = Int(giantsScoreTextField.text!) {
+                    // 4) Check if the Int value is greater than 0 (positive value)
                     if giantsScore > 0 {
                         giantsScoreLabel.text = giantsScoreTextField.text
                     }
                 }
             }
         }
-        
+
+        // Same as above, but for visitorScoreTextField
         if textField == visitorScoreTextField {
             if visitorScoreTextField.text != nil {
                 if let visitorScore = Int(visitorScoreTextField.text!) {
